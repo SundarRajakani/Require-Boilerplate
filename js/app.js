@@ -7,7 +7,6 @@
 define([
     'jQuery',
     'Backbone',
-    'router',
     'views/views',
 ], function( $, Backbone, Router, Views ){
     var initialize = function(){
