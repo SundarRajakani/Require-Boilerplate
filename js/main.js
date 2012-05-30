@@ -6,6 +6,7 @@
 
 
 //  Path config.
+console.log('-> main.js');
 require.config({
     paths: {
         strap: 'libs/backbone/strap',
@@ -20,6 +21,6 @@ require.config({
 //  Start the app.
 require([
     'app',
-], function( App ){
+], function( App ){ 
     App.initialize();
 });

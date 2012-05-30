@@ -8,14 +8,16 @@ define([
     'jQuery',
     'Backbone',
     'views/views',
-], function( $, Backbone, Router, Views ){
+], function( $, Backbone, Views ){
+
     var initialize = function(){
-        
-        this.view = new Views.main().render();
+        console.log('App.initialize()');
 
-        Backbone.history.start();
+        var v = new Views.main().render();
+        $('body').prepend( v.el );
 
-        $('body').prepend( this.view.el );
+        //  If you add a router, uncomment this line.
+        //  Backbone.history.start();
     }
 
     return {
