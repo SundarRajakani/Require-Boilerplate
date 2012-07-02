@@ -1,20 +1,29 @@
 /*
     main.js
-
-    Credit to Thomas Davis <thomasalwyndavis@gmail.com>
 */
 
-
-//  Path config.
-console.log('-> main.js');
-require.config({
+requirejs.config({
     paths: {
-        strap: 'libs/backbone/strap',
-        jQuery: 'libs/jquery/r-jquery',
-        Underscore: 'libs/underscore/r-underscore',
-        Backbone: 'libs/backbone/r-backbone',
-        order: 'libs/require/order.min',
-        text: 'libs/require/text.min',
+        jquery: 'libs/jquery-1.7.2.min',
+        underscore: 'libs/underscore-1.3.3.min',
+        backbone: 'libs/backbone-0.9.2.min',
+    },
+
+    shim: {
+        jquery: {
+            exports: function(){
+                return this.$.noConflict();
+            },
+        },
+        underscore: {
+            exports: function(){
+                return this._.noConflict();
+            },
+        },
+        backbone: {
+            deps: [ 'jquery', 'underscore' ],
+            exports: 'Backbone',
+        },
     },
 });
 
@@ -22,5 +31,5 @@ require.config({
 require([
     'app',
 ], function( App ){ 
-    App.initialize();
+    App.init();
 });

@@ -5,15 +5,13 @@
 */
 
 define([
-    'jQuery',
-    'Backbone',
+    'jquery',
+    'backbone',
     'views/views',
 ], function( $, Backbone, Views ){
 
-    var initialize = function(){
-        console.log('App.initialize()');
-
-        var v = new Views.main().render();
+    function init(){
+         var v = new Views.main().render();
         $('body').prepend( v.el );
 
         //  If you add a router, uncomment this line.
@@ -21,6 +19,6 @@ define([
     }
 
     return {
-        initialize: initialize,
+        init: init,
     }
 });
