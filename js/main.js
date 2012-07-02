@@ -33,12 +33,11 @@ require([
     'app',
     'console',
 ], function( App, SC ){ 
-    App.init();
-
-    SC.setDebugMode( false );
-    console.log( 'hello world' );
 
     SC.setDebugMode( true );
-    console.log( 'goodbye cruel world' );
+    console.log( 'Debug mode is currently on.' );
+    console.log( 'This means that console.log will be visible.' );
+
+    App.init();
 
 });
