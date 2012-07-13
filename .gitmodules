@@ -1,3 +1,3 @@
-[submodule "js/utilities/safe-console"]
-	path = js/utilities/safe-console
+[submodule "js/submodules/safe-console"]
+	path = js/submodules/safe-console
 	url = git@github.com:sjhcockrell/safe-console.git
