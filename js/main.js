@@ -7,7 +7,7 @@ requirejs.config({
         jquery: 'libs/jquery-1.7.2.min',
         underscore: 'libs/underscore-1.3.3.min',
         backbone: 'libs/backbone-0.9.2.min',
-        console: 'utilities/safe-console/console',
+        console: 'submodules/safe-console/console',
     },
 
     shim: {
@@ -30,14 +30,14 @@ requirejs.config({
 
 //  Start the app.
 require([
-    'app',
+    'startup',
     'console',
-], function( App, SC ){ 
+], function( Startup, SC ){ 
 
     SC.setDebugMode( true );
     console.log( 'Debug mode is currently on.' );
-    console.log( 'This means that console.log will be visible.' );
+    console.log( '  This means that console.log will be visible.' );
 
-    App.init();
+    Startup.start();
 
 });
