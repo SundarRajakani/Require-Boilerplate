@@ -7,6 +7,7 @@ requirejs.config({
         jquery: 'libs/jquery-1.8.1.min',
         underscore: 'libs/underscore-1.3.3.min',
         backbone: 'libs/backbone-0.9.2.min',
+        handlebars: 'libs/handlebars-1.0.6.min',
         console: 'submodules/safe-console/console',
     },
 
@@ -25,6 +26,11 @@ requirejs.config({
             deps: [ 'jquery', 'underscore' ],
             exports: 'Backbone',
         },
+        handlebars: {
+            deps: ['jquery', 'underscore', 'backbone'],
+            exports: 'Handlebars',
+        },
+
     },
 });
 
