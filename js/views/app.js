@@ -7,13 +7,15 @@ define([
     'backbone',
 ], function( $, _, Backbone ){
 
-    var Foundation = Backbone.View.extend({
-        initialize: function(){
-            $('body').addClass('app');
+    var FrameView = Backbone.View.extend({
+        id: 'frame',
+        initialize: function(){},
+        render: function(){
+            return this;
         },
     });
 
     return { 
-        Foundation: Foundation,
+        Frame: FrameView,
     }
 });

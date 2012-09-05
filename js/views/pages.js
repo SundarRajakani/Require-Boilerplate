@@ -4,9 +4,8 @@ define([
     'backbone',
 ], function( $, _, Backbone ){
     
-    var MainView = Backbone.View.extend({
-        tagName: "div",
-        id: "main",
+    var LandingPage = Backbone.View.extend({
+        id: 'pg_landing',
         initialize: function(){},
         render: function(){
             return this;
@@ -14,6 +13,6 @@ define([
     });
     
     return {
-        main: MainView,
+        LandingPage: LandingPage
     }
 });
