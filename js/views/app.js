@@ -7,8 +7,8 @@ define([
     'backbone',
 ], function( $, _, Backbone ){
 
-    var FrameView = Backbone.View.extend({
-        id: 'frame',
+    var WrapperView = Backbone.View.extend({
+        id: 'wrapper',
         initialize: function(){},
         render: function(){
             return this;
@@ -16,6 +16,6 @@ define([
     });
 
     return { 
-        Frame: FrameView,
+        Wrapper: WrapperView,
     }
 });

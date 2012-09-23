@@ -36,14 +36,32 @@ requirejs.config({
 
 //  Start the app.
 require([
-    'startup',
+    'jquery',
+    'backbone',
     'console',
-], function( Startup, SC ){ 
+    'router',
+    'views/app',
+], function( $, Backbone, SC, Router, App ){ 
 
     SC.setDebugMode( true );
     console.log( 'Debug mode is currently on.' );
     console.log( '  This means that console.log will be visible.' );
 
-    Startup.start();
 
+    /*
+        Start it up:
+
+        Create:
+            new Wrapper view
+            new Router
+
+        If there's any authentication, store those methods
+          in the Wrapper view which holds the whole dang thing.
+    */
+
+    var wrapper = new App.Wrapper();
+    $('body').prepend( wrapper.el );
+
+    var router = new Router.AppRouter( wrapper );
+    Backbone.history.start();
 });
