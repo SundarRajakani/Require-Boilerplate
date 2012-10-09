@@ -7,8 +7,9 @@ requirejs.config({
         jquery: 'libs/jquery-1.8.1.min',
         underscore: 'libs/underscore-1.3.3.min',
         backbone: 'libs/backbone-0.9.2.min',
-        handlebars: 'libs/handlebars-1.0.6.min',
+        handlebars: 'libs/handlebars.runtime-1.0.beta.6.min',
         console: 'submodules/safe-console/console',
+        templates:  'build/templates',
     },
 
     shim: {
@@ -30,7 +31,10 @@ requirejs.config({
             deps: ['jquery', 'underscore', 'backbone'],
             exports: 'Handlebars',
         },
-
+        templates: {
+            deps: ['handlebars'],
+            exports: 'Templates',
+        },
     },
 });
 
